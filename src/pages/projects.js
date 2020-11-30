@@ -11,8 +11,8 @@ const ProjectsPage = ({ data }) => (
     <h1>Hi from the PROJECTS page</h1>
     <p>Welcome to page 2</p>
 
-    {data.allMarkdownRemark.edges.map(project => (
-      <ProjectsContainer key={project.node.id} title={project.node.frontmatter.title} description={project.node.frontmatter.description} author={project.node.frontmatter.author} path={project.node.frontmatter.path}  />
+    {data.allMarkdownRemark.edges.map( (project, index) => (
+      <ProjectsContainer key={project.node.id} title={project.node.frontmatter.title} description={project.node.frontmatter.description} author={project.node.frontmatter.author} path={project.node.frontmatter.path} featuredImage={project.node.frontmatter.featuredImage} />
     ))}
     <Link to="/">Go back to the homepage</Link>
   </Layout>
@@ -28,6 +28,7 @@ export const allProjects = graphql`
             description
             path
             title
+            featuredImage
           }
           id
         }

@@ -1,5 +1,4 @@
-import React from "react"
-import styled, {
+import {
     createGlobalStyle
 } from "styled-components"
 import * as font from '../assets/fonts';

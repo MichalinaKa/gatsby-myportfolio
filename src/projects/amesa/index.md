@@ -1,8 +1,10 @@
 ---
 path: '/amesa-woocommerce'
-title: 'My Portfolio website in Gatsby2'
+title: 'Amesa shop'
 author: 'Michalina Kamińska'
 description: 'This will be description of the projects'
+featuredImage: 'avesso.png'
 ---
-
-<!-- ![My portfolio](https://unsplash.com/photos/muOHbrFGEQY) -->
+<br>
+<br>
+![Eyes](eyes.png)
