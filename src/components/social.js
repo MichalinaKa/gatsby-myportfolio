@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import Github from "../assets/icons/github.png"
 import Linkedin from "../assets/icons/linkedin.png"
@@ -9,8 +8,7 @@ const SocialWrapper = styled.div`
     width: 52px;
     height: 200px;  
     position: absolute;
-    top: 65%;
-
+top:60%;  
     left: 85px;;
     display:flex;
     align-items: stretch;

@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import styled from "styled-components"
 import Sea from "../images/sea.jpg"
-import SocialLinks from "../components/Social"
+import SocialLinks from "../components/social"
 
 const BorderBox = styled.div`
   position: absolute;
