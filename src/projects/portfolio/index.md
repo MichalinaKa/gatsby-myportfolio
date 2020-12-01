@@ -7,4 +7,10 @@ featuredImage: './eyes.png'
 
 ---
 
+<div class="image-wrapper"> 
+
+
 ![photo](eyes.png)
+
+</div>
+

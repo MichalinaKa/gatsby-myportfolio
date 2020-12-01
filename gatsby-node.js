@@ -13,6 +13,18 @@ exports.createPages = ({ actions, graphql }) => {
   const projectTemplate = path.resolve("src/templates/projectTemplate.js");
 
 
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type MarkdownRemarkFrontmatter @infer {
+      featuredImage: File
+    }
+
+    type MarkdownRemark implements Node @infer {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+  `)
+}
+
 return graphql(`
   {
     allMarkdownRemark {

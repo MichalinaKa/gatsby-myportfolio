@@ -1,15 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SocialLinks from "../components/social"
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the CONTACT page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+< SocialLinks/>
+    <SEO title="Contact - Michalina Kaminska" />
+    <p>Currently living in Gliwice, Poland.
+  kaminskaa.michalina@gmail.com</p>
+    <a href="../../kaminska_11.2020.pdf">CV</a>
   </Layout>
 )
 

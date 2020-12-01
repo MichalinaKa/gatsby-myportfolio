@@ -28,8 +28,7 @@ export const allProjects = graphql`
             description
             path
             title
-            featuredImage
-          }
+            }
           id
         }
       }

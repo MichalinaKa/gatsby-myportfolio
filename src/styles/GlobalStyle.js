@@ -7,14 +7,7 @@ import * as font from '../assets/fonts';
 const GlobalStyle = createGlobalStyle `
 /* examples of setting colors */
   :root {
-    --accent-color: hsl(209, 100%, 55%);
-    --dark-color: hsl(0, 0%, 15%);
-    --dark-color-light: hsla(0, 0%, 15%, 0.9);
-    --dark-color-lighter: hsla(00, 0%, 15%, 0.7);
-    --light-color: hsl(0, 0%, 99%);
-    --light-color-translucent: hsla(0, 0%, 99%, 0.92);
-    --sides-padding-desktop: 3%;
-    --sides-padding-mobile: 5%;
+ 
   }
 
   @font-face {
@@ -32,6 +25,31 @@ const GlobalStyle = createGlobalStyle `
     font-weight: 700;
     src: url('${font.IBMPlexMono700}') format("woff2");
   }
+
+
+  @font-face {
+    font-display: block;
+    font-family: "GilbertBold";
+    font-style: normal;
+    font-weight: 400;
+    src: url('${font.GilbertBold}') format("woff");
+  }
+
+  @font-face {
+    font-display: block;
+    font-family: "GilbertColor";
+    font-style: normal;
+    font-weight: 700;
+    src: url('${font.GilbertColor}') format("woff");
+  }
+
+
+  @font-face {
+    font-style: regular;
+    font-family: "MajorMono";
+    font-weight: 400;
+    src: url('${font.MajorMono}') format("woff");
+  }
   /* Set core body defaults */
   body {
     line-height: 1.5;
@@ -40,7 +58,7 @@ const GlobalStyle = createGlobalStyle `
     text-rendering: optimizeSpeed;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: #E3DCDE;
+    background-color:${({ theme }) => theme.colors.dirtyPink};
     font-family: 'IBMPlexMono', sans-serif;
   }
 

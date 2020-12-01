@@ -3,18 +3,42 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import Image from "../components/image"
+import Eyes from "../images/eyes.png"
 
 const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 50px;
+  padding: 50px 100px 50px 100px;
 `
 
 const MenuWrapper = styled.div`
+  flex-basis: 50%;
   display: flex;
   justify-content: space-between;
+  ${({ theme }) => theme.media.md} {
+    flex-basis: 50%;
+    }
+  ${({ theme }) => theme.media.lg} {
+    flex-basis: 45%;
+    }
+  a {
+    letter-spacing: 1.4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "MajorMono";
+    color: ${({theme}) => theme.colors.violet}; 
+    font-size: 22px;
+    &:active {
+      background-color: ${({theme}) => theme.colors.yellow};
+    }
+    &:visited {
+      color: ${({theme}) => theme.colors.violet}; ;
+    }
+  }
   .activeItem {
     position: relative;
-
     &:before {
       content: "";
       display: block;
@@ -23,67 +47,62 @@ const MenuWrapper = styled.div`
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: orange;
+      background-color: ${({theme}) => theme.colors.yellow};
+
     }
   }
 `
 const LogoWrapper = styled.div`
   position: relative;
+  background-image: url(${Eyes});
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50px 10px;
+  height: 250px;
+
 `
 const StyledH1 = styled.h1`
-      a {
-        color: #E35C85;
-        text-decoration: none;
+  a {
+    color: #e35c85;
+    color: black;
+    text-decoration: none;
+    font-family: "MajorMono";
+    font-style: normal;
+    /* text-transform: uppercase; */
+    font-size: 35px;
+    color: #fdffba;
 
-}
-
+  }
 `
-
-const ImageWrapper = styled.div`
-  max-width: 250px;
-  text-align: end;
-  margin: 0 auto;
-
-`
-
-
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
     <MenuWrapper>
       <Link to="/" activeClassName="activeItem">
         {" "}
-        Home{" "}
+        home{" "}
       </Link>{" "}
       <br />
       <Link to="/about/" activeClassName="activeItem">
         {" "}
-        About{" "}
+        about{" "}
       </Link>{" "}
       <br />
       <Link to="/contact/" activeClassName="activeItem">
         {" "}
-        Contact{" "}
+        contact{" "}
       </Link>{" "}
       <br />
       <Link to="/projects/" activeClassName="activeItem">
         {" "}
-        Projects{" "}
+        projects{" "}
       </Link>{" "}
       <br />
     </MenuWrapper>{" "}
     <LogoWrapper>
       <StyledH1>
-        {" "}
-        {/* <Link to="/">
-              {siteTitle}
-            </Link>       */}{" "}
-        <Link to="/">michalina kamińska </Link>
-
+        <Link to="/">Michalina Kamińska</Link>
       </StyledH1>
-      <ImageWrapper>
-        <Image />
-      </ImageWrapper>
     </LogoWrapper>
   </HeaderWrapper>
 )

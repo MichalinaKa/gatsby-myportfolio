@@ -13,20 +13,20 @@ const StyledImg = styled.div`
 `
 
 
-const ProjectsContainer = ({title, path, description, author, featuredImage}) => (
+const ProjectsContainer = ({ title, path, description, author, featuredImage }) => (
     <section>
         <Link to={path}>
             <h2>{title}</h2>
-<p>{description}</p>
-<p>{author}</p>
-<StyledImg>
-    <img src={featuredImage} alt="gatsby - tutaj powinno być zdjęcie"/>
+            <p>{description}</p>
+            <p>{author}</p>
+            <StyledImg>
+                <img src={featuredImage} alt="gatsby - tutaj powinno być zdjęcie" />
 
-</StyledImg>
+            </StyledImg>
 
-<p>See more</p>
+            <p>See more</p>
 
-</Link>
+        </Link>
 
     </section>
 
