@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import React from "react"
-import SEO from "../components/seo"
-import SocialLinksCenter from "../components/socialCenter"
+import SEO from "./Seo"
+import SocialLinksCenter from "./SocialCenter"
 
 const MainWrapper = styled.div`
     margin: -100px auto 0; 

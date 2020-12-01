@@ -10,6 +10,7 @@ const SocialWrapper = styled.div`
     height: 200px;  
     position: absolute;
     top: 65%;
+
     left: 85px;;
     display:flex;
     align-items: stretch;
