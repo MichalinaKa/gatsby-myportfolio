@@ -13,7 +13,7 @@ function Template({ data }) {
             <h1>{project.frontmatter.title}</h1>
             <p>{project.frontmatter.description}</p>
             <div dangerouslySetInnerHTML={{ __html: project.html }}></div>
-
+            <img src={project.frontmatter.image.childImageSharp.resolutions.src} alt=""/>
         </Layout>
     )
 }
@@ -27,6 +27,14 @@ export const ProjectsQuery = graphql`
         description
         path
         title
+        featuredImage {
+            id
+            childImageSharp {
+              resolutions {
+                src
+              }
+            }
+          }
       }
     }
   }

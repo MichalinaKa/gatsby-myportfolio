@@ -26,7 +26,7 @@ const ProjectsPage = ({ data }) => (
         title={project.node.frontmatter.title}
         description={project.node.frontmatter.description}
         author={project.node.frontmatter.author}
-        // featuredImage={node.frontmatter.featuredImage}
+        // featuredImage={project.node.frontmatter.featuredImage.childImageSharp.resolutions.src}
       />
     ))}
 </ProjectsMain>
@@ -45,6 +45,14 @@ export const allProjects = graphql`
             description
             title
             path
+featuredImage {
+            id
+            childImageSharp {
+              resolutions {
+                src
+              }
+            }
+          }
           }
           id
         }
