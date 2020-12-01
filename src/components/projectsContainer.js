@@ -13,6 +13,8 @@ const StyledImg = styled.div`
 `
 
 
+
+
 const ProjectsContainer = ({ title, path, description, author, featuredImage }) => (
     <section>
         <Link to={path}>
