@@ -1,8 +1,9 @@
 ---
+path: '/projects/amesa'
 title: 'Amesa shop'
 author: 'Michalina Kamińska'
 description: 'This will be description of the projects'
-featuredImage: 'avesso.png'
+featuredImage: '/avesso.png'
 ---
 
 

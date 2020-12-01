@@ -2,7 +2,6 @@
   "name": "portfolio",
   "private": true,
   "description": "Portfolio website",
-  "version": "1.0",
   "author": "Michalina Kamińska",
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",

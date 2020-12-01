@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 import styled from "styled-components"
 import Sea from "../images/sea.jpg"
-import SocialLinks from "../components/social"
+import SocialLinks from "../components/Social"
 
 const BorderBox = styled.div`
   position: absolute;
@@ -103,7 +103,7 @@ const IndexPage = () => (
     <Wrapper>
       <p>
         ~I’m aspiring <span>front-end developer</span> &{" "}
-        <span class="pink"> beginner web designer </span>
+        <span className="pink"> beginner web designer </span>
         <br></br>
       </p>
       <span>

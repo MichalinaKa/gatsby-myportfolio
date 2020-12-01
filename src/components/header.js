@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import Image from "../components/image"
 import Eyes from "../images/eyes.png"
 
 const HeaderWrapper = styled.header`

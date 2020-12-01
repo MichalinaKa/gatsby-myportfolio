@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-            <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
 
 
 <GlobalStyle/>

@@ -6,78 +6,37 @@
 
 // You can delete this file if you're not using it
 
-// const path = require("path")
+const path = require("path")
 
-// exports.createPages = ({ actions, graphql }) => {
-//   const { createPage } = actions;
-//   const projectTemplate = path.resolve("src/templates/projectTemplate.js");
-
-
-
-// return graphql(`
-//   {
-//     allMarkdownRemark {
-//       edges {
-//         node {
-//           frontmatter {
-//             path
-//           }
-//         }
-//       }
-//     }
-//   }
-// `).then(res => {
-//     if (res.errors){
-//     return Promise.reject
-//     }
-//     res.data.allMarkdownRemark.edges.forEach(({node}) => {
-//         createPage({
-//             path: node.frontmatter.path,
-//             component: projectTemplate
-//         })
-//     })
-// })
-// }
-
-
-const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `projects` });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    });
-  }
-};
-
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  return graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
+  const projectTemplate = path.resolve("src/templates/projectTemplate.js");
+
+
+
+return graphql(`
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            path
           }
         }
       }
     }
-  `).then((result) => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve(`./src/templates/projectTemplate.js`),
-        context: {
-          slug: node.fields.slug,
-        },
-      });
-    });
-  });
-};
+  }
+`).then(res => {
+    if (res.errors){
+    return Promise.reject
+    }
+    res.data.allMarkdownRemark.edges.forEach(({node}) => {
+        createPage({
+            path: node.frontmatter.path,
+            component: projectTemplate
+        })
+    })
+})
+}
+
+
