@@ -13,7 +13,7 @@ import Layout from "../components/layout"
 
 
 // `;
-function Template({ data }) {
+const Template = ({ data }) => {
     const project = data.markdownRemark
     // const featuredImage = data.markdownRemark.frontmatter.featuredImage
     //     ? data.markdownRemark.frontmatter.featuredImage
@@ -31,24 +31,17 @@ console.log(project)
     )
 }
 
-export const ProjectsQuery = graphql`
-  query ProjectTemplate($path: String!, ) {
-    markdownRemark(frontmatter: { path: { eq: $path }}) {
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        author
-        description
-        path
         title
-
-
-
- 
-       
-      }
+        description
+        author 
+     }
     }
-  
   }
-`
+`;
 
 export default Template

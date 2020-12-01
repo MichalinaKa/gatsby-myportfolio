@@ -71,10 +71,10 @@ const SocialWrapper = styled.div`
 const SocialLinks = ({props}) => (
   <>
     <SocialWrapper>
-      <a href="https://github.com/MichalinaKa" target="_blank" className="github"></a>
-      <a href="https://www.linkedin.com/in/michalina-kamińska89/" target="_blank" className="linkedin">
+      <a href="https://github.com/MichalinaKa" target="_blank" rel="noreferrer" className="github"></a>
+      <a href="https://www.linkedin.com/in/michalina-kamińska89/" rel="noreferrer" target="_blank" className="linkedin">
       </a>
-      <a href="https://www.instagram.com/michalina_ka/" target="_blank" className="instagram"></a>
+      <a href="https://www.instagram.com/michalina_ka/" rel="noreferrer" target="_blank" className="instagram"></a>
     </SocialWrapper>
   </>
 )
