@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import Github from "../assets/icons/github.png"
 import Linkedin from "../assets/icons/linkedin.png"
@@ -59,17 +58,15 @@ const SocialWrapper = styled.div`
         height: 32px;
   }
     }
-    
-
 `
 
 const SocialLinksCenter = ({props}) => (
   <>
     <SocialWrapper>
-      <a href="https://github.com/MichalinaKa" target="_blank" className="github"></a>
-      <a href="https://www.linkedin.com/in/michalina-kamińska89/" target="_blank" className="linkedin">
+      <a href="https://github.com/MichalinaKa" target="_blank" rel="noreferrer"  className="github"></a>
+      <a href="https://www.linkedin.com/in/michalina-kamińska89/" target="_blank" rel="noreferrer"  className="linkedin">
       </a>
-      <a href="https://www.instagram.com/michalina_ka/" target="_blank" className="instagram"></a>
+      <a href="https://www.instagram.com/michalina_ka/" target="_blank" rel="noreferrer" className="instagram"></a>
     </SocialWrapper>
   </>
 )

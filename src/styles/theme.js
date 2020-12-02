@@ -3,13 +3,14 @@ export const theme = {
   colors: {
     black: "#000000",
     white: "#ffffff",
+    whiteHalf:  'rgba(255,255,255, 0.5)',
     yellow: "#fdffba",
     violet: "#670074",
     dirtyPink: "#E3DCDE",
-pink: "#E35C85",
+    pink: "#E35C85",
+    blue: "rgba(192, 228, 237, 0.7);",
+    blueNormal: "rgba(192, 228, 237, 1);",
 
-    grey: "#fafafb",
-    greySubmenu: "#F6F6F6",
 
   },
   fontWeight: {
