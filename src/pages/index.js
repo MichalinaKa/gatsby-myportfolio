@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Sea from "../images/sea.jpg"
 import SocialLinks from "../components/social"
 
+
 const BorderBox = styled.div`
   position: absolute;
   width: 100vw;
@@ -36,12 +37,15 @@ const BorderBox = styled.div`
   }
 `
 
+
 const Wrapper = styled.div`
   width: 70%;
   margin: 0 auto;
+  font-family: 'Jost';
+  letter-spacing: 1.5px;
   ${({ theme }) => theme.media.xl} {
-    width: 60%;
-    margin: 10px 0 0 450px;
+    width: 50%;
+    margin: 10px 0 0 650px;
   }
   &::before {
     content: "";
@@ -50,20 +54,34 @@ const Wrapper = styled.div`
     background-repeat: no-repeat;
     display: block;
     position: absolute;
-    top: 200px;
-    left: 300px;
-    width: 500px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
     z-index: -1;
-    opacity: 0.2;
-    box-shadow: 16px -12px 50px -4px #cff6ff;
-    box-shadow: 16px -20px 50px 20px rgba(192, 228, 237, 0.7);
+    opacity: 1;
+    box-shadow: 20px -20px 60px 10px ${({ theme }) => theme.colors.blue};
 
+    ${({ theme }) => theme.media.lg} {
+    top: 100px;
+    left: 300px;
+    width: 450px;
+    height: 450px;
+    opacity: 0.7;
+
+    }
     ${({ theme }) => theme.media.xl} {
-      top: 250px;
+      top: 150px;
       left: 300px;
-      width: 700px;
-      height: 500px;
+      width: 550px;
+      height: 550px;
+      background-color: ${({ theme }) => theme.colors.blue};
+    }
+   ${({ theme }) => theme.media.xxl} {
+      top: 200px;
+      left: 300px;
+      width: 550px;
+      height: 550px;
+      background-color: ${({ theme }) => theme.colors.blue};
     }
   }
   p {
@@ -71,11 +89,12 @@ const Wrapper = styled.div`
     line-height: 2rem;
     color: ${({ theme }) => theme.colors.white};
 
-    ${({ theme }) => theme.media.xl} {
+    ${({ theme }) => theme.media.lg} {
       font-size: 40px;
       line-height: 3rem;
     }
     ${({ theme }) => theme.media.xl} {
+      padding-top: 100px;
       font-size: 50px;
       line-height: 5rem;
     }
@@ -101,13 +120,20 @@ const IndexPage = () => (
     </BorderBox>
 
     <Wrapper>
+
       <p>
-        ~I’m aspiring <span>front-end developer</span> &{" "}
-        <span className="pink"> beginner web designer </span>
+        ~Hi! I’m <span>front-end developer</span> &
+        <span className="pink"><br></br> beginner web designer </span>
         <br></br>
       </p>
       <span>
-        ~With love to details and pretty, useful designs<br></br>
+        ~ With love to details and pretty, useful designs<br></br>
+      </span>
+   <span>
+        ~ Yoga lover and good life enthusiast<br></br>
+      </span>
+      <span>
+        ~ I plan to spend my life with this view<br></br>
       </span>
     </Wrapper>
   </Layout>
