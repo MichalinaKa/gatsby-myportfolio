@@ -8,14 +8,25 @@ const SocialWrapper = styled.div`
     width: 52px;
     height: 200px;  
     position: absolute;
-top:60%;  
-    left: 85px;;
+    top:70%;  
+    left: 10px;;
     display:flex;
     align-items: stretch;
     padding-top: 30px;
-    background-color: ${({ theme }) => theme.colors.dirtyPink};
+    ${({ theme }) => theme.media.md} {
+        background-color: ${({ theme }) => theme.colors.dirtyPink};
+        top:60%;  
+        left: 40px;
+    }
+    ${({ theme }) => theme.media.lg} {
+        background-color: ${({ theme }) => theme.colors.dirtyPink};
+        top:60%;  
+        left: 85px;;
+    }
     a {
     position: relative;
+
+  
 }
     .github {
         &::before {

@@ -5,18 +5,51 @@ import SocialLinks from "../components/social"
 import styled from "styled-components"
 
 const ContactWrapper = styled.div`
-  width: 550px;
-  height: 550px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.pink};
-  margin: 100px auto 0px;
+  margin: 20px auto 0px;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   position: relative;
   box-shadow: 1px -2px 19px 16px #e35c85;
-  animation-name: changeColors1;
-  animation-duration: 10s;
+
+
+  ${({ theme }) => theme.media.ssm} {
+      margin: 0 auto ;
+      width: 300px;
+      height: 300px;
+      margin: 50px auto 0px;
+  }
+
+  ${({ theme }) => theme.media.sm} {
+      margin: 0 auto ;
+      width: 450px;
+      height: 450px;
+      margin: 100px auto 0px;
+
+  }
+
+  ${({ theme }) => theme.media.md} {
+      margin: 120px auto 0px;
+      width: 550px;
+      height: 550px;
+ 
+  }
+
+  ${({ theme }) => theme.media.lg} {
+      width: 550px;
+      height: 550px;
+      margin: 100px auto 0px;
+      animation-name: changeColors1;
+      animation-duration: 10s;
+
+
+  }
+
+
   @keyframes changeColors1 {
     0% {
       background-color: ${({ theme }) => theme.colors.dirtyPink};
@@ -49,13 +82,36 @@ const ContactWrapper = styled.div`
 
 const H1 = styled.h1`
       color: ${({ theme }) => theme.colors.yellow};
-      font-size: 120px;
-      position: absolute;
-      left: -250px;
-      top: -50px;
-      animation-name: changeColors2;
+      font-size: 60px;
+      text-align: center;      
       font-family: 'Jost';
-      animation-duration: 10s;
+
+      ${({ theme }) => theme.media.sm} {
+            font-size: 80px;
+      }
+
+      ${({ theme }) => theme.media.md} {
+            font-size: 100px;
+      }
+
+      ${({ theme }) => theme.media.lg} {
+          animation-name: changeColors2;
+          animation-duration: 10s;
+          font-size: 120px;
+          position: absolute;
+          left: -150px;
+          top: -50px;
+      }
+
+     ${({ theme }) => theme.media.xl} {
+          font-size: 120px;
+          position: absolute;
+          left: -200px;
+          top: -50px;
+      }
+
+
+
       @keyframes changeColors2
       {
         0% { color: ${({ theme }) => theme.colors.dirtyPink};   font-size: 2px;;}
@@ -69,16 +125,29 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
       color: ${({ theme }) => theme.colors.white};
-      font-size: 40px;
-      line-height: 3rem;;
+      font-size: 20px;
+      line-height: 1.5rem;;
       position: relative;
       text-align: center;
-      animation-name: fadeIn3;
-      animation-duration: 10s;
-      top: 170px;
+      top: 10px;
       font-family: "MajorMono";
       letter-spacing: 1.6px;
 
+      ${({ theme }) => theme.media.md} {
+        font-size: 40px;
+        line-height: 3rem;;
+        top: 10px;
+      }
+
+  ${({ theme }) => theme.media.lg} {
+        animation-name: fadeIn3;
+        animation-duration: 10s;
+        font-size: 40px;
+        line-height: 3rem;;
+        top: 170px;
+
+
+      }
       @keyframes fadeIn3
       {
         0% { opacity: 0; font-size: 0;}
@@ -88,18 +157,28 @@ const H2 = styled.h2`
 `
 const H3 = styled.h3`
       color: ${({ theme }) => theme.colors.yellow};
-      font-size: 25px;
+      font-size: 18px;
       position: relative;
       text-align: center;
-      animation-name: fadeIn4;
-      animation-duration: 10s;
       font-family: 'Jost';
-      top: 170px;
+      top: 10px;
+
+
+     ${({ theme }) => theme.media.md} {
+        top: 10px;
+        font-size: 25px;
+      }
+    ${({ theme }) => theme.media.lg} {
+        animation-name: fadeIn4;
+        animation-duration: 7s;
+        top: 170px;
+        font-size: 25px;
+      }
 
       @keyframes fadeIn4
       {
-        0% { opacity: 0; font-size: 0; }
-        90% { opacity: 0; font-size: 0;}
+        0% { opacity: 0;  }
+        90% { opacity: 0; }
         100% { opacity: 1 }
       }
  `
@@ -110,11 +189,11 @@ const Box = styled.div`
   margin-left: 40px;
   border-radius: 50%;
   position: absolute;
-  left: 77%;
-  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
   animation-name: changeColors;
   animation-duration: 10s;
-  /* animation-iteration-count: 4; */
 `
 
 const Box1 = styled.div`
@@ -197,8 +276,8 @@ const ContactPage = () => (
     <ContactWrapper >
       <H1> Let 's talk</H1>{" "}
       <H2>Currently living in Gliwice, Poland. <br></br>Open for work. </H2>
-       <H3> kaminskaa.michalina @gmail.com </H3>
-      <H2> <a href="../../kaminska_11.2020.pdf" > CV </a></H2>
+      <H3> kaminskaa.michalina @gmail.com </H3>
+      <H2> <a href="../../kaminska.pdf" > CV </a></H2>
     </ContactWrapper>
     </Layout>
 </>

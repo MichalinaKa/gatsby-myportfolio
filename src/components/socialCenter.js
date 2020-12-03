@@ -5,17 +5,17 @@ import Linkedin from "../assets/icons/linkedin.png"
 import Instagram from "../assets/icons/instagram.png"
 
 const SocialWrapper = styled.div`
-    width: 200px;
+    width: 150px;
     height: 32px;  
     position: relative;
-    left: 35%;;
+    left: 50%;
+    transform: translate(-50%, 0%);
     display:flex;
     flex-wrap: nowrap;
     align-items: stretch;
-
     a {
     position: relative;
-}
+    }
     .github {
         &::before {
         content: "";
@@ -28,7 +28,7 @@ const SocialWrapper = styled.div`
         left: 0px;
         width: 32px;
         height: 32px;
-  }
+      }
     }
     .linkedin {
         &::before {
@@ -42,7 +42,7 @@ const SocialWrapper = styled.div`
         left: 50px;
         width: 32px;
         height: 32px;
-  }
+      }
     }
     .instagram {
         &::before {
@@ -56,7 +56,7 @@ const SocialWrapper = styled.div`
         left: 100px;
         width: 32px;
         height: 32px;
-  }
+      }
     }
 `
 

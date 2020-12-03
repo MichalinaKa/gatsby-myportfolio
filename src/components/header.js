@@ -9,19 +9,24 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 50px;
-  padding: 50px 100px 50px 100px;
+  padding: 10px 50px 100px 50px;
+
+  ${({ theme }) => theme.media.lg} {
+     padding: 50px 100px 50px 100px;
+    }
+
 `
 
 const MenuWrapper = styled.div`
   flex-basis: 50%;
-  display: flex;
+  display: none;
   justify-content: space-between;
-  ${({ theme }) => theme.media.md} {
-    flex-basis: 50%;
-    }
+ 
   ${({ theme }) => theme.media.lg} {
+    display: flex;
     flex-basis: 45%;
     }
+
   a {
     letter-spacing: 1.4px;
     text-decoration: none;
@@ -29,13 +34,16 @@ const MenuWrapper = styled.div`
     font-family: "MajorMono";
     color: ${({theme}) => theme.colors.violet}; 
     font-size: 22px;
+
     &:active {
       background-color: ${({theme}) => theme.colors.yellow};
     }
+
     &:visited {
       color: ${({theme}) => theme.colors.violet}; ;
     }
   }
+
   .activeItem {
     position: relative;
     &:before {
@@ -56,13 +64,27 @@ const LogoWrapper = styled.div`
   background-image: url(${Eyes});
   background-size: 80%;
   background-repeat: no-repeat;
-  top: 80px;
-right: 30px;;
-  height: 250px;
-  width: 200px;
+  top: 50px;
+  left:70px;
+  height: 200px;
+  width: 150px;
   animation-name: fadeInEyes;
   animation-iteration-count: 100;
   animation-duration: 10s;
+
+  ${({ theme }) => theme.media.md} {
+    height: 200px;
+    width: 250px;
+
+   
+  }
+  ${({ theme }) => theme.media.lg} {
+    height: 300px;
+    width: 250px;
+    right: 30px;
+    left: auto;;
+    top: 80px;
+  }
       @keyframes fadeInEyes
       {
           0% { opacity: 0;  }
@@ -83,20 +105,28 @@ right: 30px;;
           75% { opacity: 1; }
           80% { opacity: 1; }
           90% { opacity: 1; }
-
           100% { opacity: 0 }
       }
-
 `
 const StyledH1 = styled.h1`
   a {
-    color: #e35c85;
-    color: black;
     text-decoration: none;
     font-family: "MajorMono";
     font-style: normal;
-    font-size: 35px;
+    font-size: 20px;
     color: #fdffba;
+ ${({ theme }) => theme.media.md} {
+    font-size: 30px;
+
+  }
+  ${({ theme }) => theme.media.lg} {
+     font-size: 30px;
+
+  }
+  ${({ theme }) => theme.media.xl} {
+
+
+  }
 
   }
 `
@@ -125,8 +155,7 @@ const Header = ({ siteTitle }) => (
       </Link>{" "}
       <br />
     </MenuWrapper>{" "}
-    <LogoWrapper>
-    
+    <LogoWrapper> 
     </LogoWrapper>
       <StyledH1>
         <Link to="/">Michalina Kamińska</Link>

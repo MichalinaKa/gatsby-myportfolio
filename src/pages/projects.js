@@ -5,15 +5,15 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import ProjectsContainer from "../components/projectsContainer"
+import ScrollArrow from "../components/ScrollArrow"
 
 
 const ProjectsPage = ({ data }) =>
   (
     <Layout>
       <SEO title="Page Projects" />
-      {/* <H1>MY PROJECTS</H1> */}
        <ProjectsContainer/>
-
+        <ScrollArrow/>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )

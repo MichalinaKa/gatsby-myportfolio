@@ -3,173 +3,247 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-
-
 const ProjectsMain = styled.div`
-  display: grid;
   position: relative;
-  margin: 150px 100px 0;
+  margin: 50px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${({ theme }) => theme.media.sm} {
+  }
+
+  ${({ theme }) => theme.media.md} {
+  }
+
+  ${({ theme }) => theme.media.lg} {
+  }
+
+  ${({ theme }) => theme.media.xxl} {
+    margin: 150px 100px 0;
+  }
 `
 
 const ImgWrapper = styled.div`
-  /* position: relative; */
-  width: 600px;
-  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  object-fit: contain;
+  width: 100%;
+  height:250px;
+
+  ${({ theme }) => theme.media.sm} {
+    height: 350px;
+  }
+  ${({ theme }) => theme.media.md} {
+    height: 500px;
+  }
+
+  ${({ theme }) => theme.media.lg} {
+    height: 600px;
+  }
   &.portfolio--first {
+
     .gatsby-image-wrapper {
-      box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
-      width: 100%;
-      height: 70%;
-      position: absolute;
-      object-fit: contain;
-      left: 70%;
-      top: -100px;
+        margin: 0 auto;
+        position: absolute;
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        object-fit: contain;
+      ${({ theme }) => theme.media.md} {
+        left: 70%;
+        top: -100px;
+        position: absolute;
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
   }
   &.avesso--first {
     .gatsby-image-wrapper {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      object-fit: contain;
-      left: -30%;
-      top: -30%;
-      box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+      ${({ theme }) => theme.media.md} {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: contain;
+        left: -30%;
+        top: -30%;
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+      }
     }
   }
+
   &.wedding--first {
     .gatsby-image-wrapper {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      object-fit: contain;
-      left: 70%;
-      top: 40%;
-      box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+      ${({ theme }) => theme.media.md} {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: contain;
+        left: 70%;
+        top: 40%;
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+      }
     }
   }
   &.amesa--first {
     .gatsby-image-wrapper {
-      width: 100%;
-      height: 80%;
-      position: absolute;
-      object-fit: contain;
-      left: -30%;
-      top: -20%;
-      box-shadow: 2px 20px 40px 14px rgba(255, 255, 255, 0.51);
+      ${({ theme }) => theme.media.md} {
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        object-fit: contain;
+        left: -30%;
+        top: -20%;
+        box-shadow: 2px 20px 40px 14px rgba(255, 255, 255, 0.51);
+      }
     }
   }
 `
 
 const Portfolio = styled.section`
+    width:100%;
+    height: auto;
+
+  ${({ theme }) => theme.media.md} {
     width: 900px;
     height: 500px;
     margin-bottom: 200px;
     border: 20px solid ${({ theme }) => theme.colors.pink};
     position: relative;
+  }
 
-    }
-    h1 {
-      position: absolute; 
-      right: 30%;   
+  h1 {
+    ${({ theme }) => theme.media.md} {
+      position: absolute;
+      right: 30%;
       color: ${({ theme }) => theme.colors.white};
-      top:0px;
+      top: 0px;
       left: -150px;
       z-index: 1;
       font-size: 80px;
-      }
+    }
+  }
 `
 
 const Avesso = styled.section`
-  width: 900px;
-  height: 500px;
-  margin-bottom: 300px;
-  border: 20px solid ${({ theme }) => theme.colors.black};
-  position: relative;
+  width:100%;
 
+  ${({ theme }) => theme.media.md} {
+    width: 900px;
+    height: 500px;
+    margin-bottom: 300px;
+    border: 20px solid ${({ theme }) => theme.colors.black};
+    position: relative;
+  }
   h1 {
-    position: absolute;
-    right: 30%;
-    color: ${({ theme }) => theme.colors.white};
-    top: -50px;
-    right: -50px;
-
-    z-index: 1;
-    font-size: 100px;
+    ${({ theme }) => theme.media.md} {
+      position: absolute;
+      right: 30%;
+      color: ${({ theme }) => theme.colors.white};
+      top: -50px;
+      right: -50px;
+      z-index: 1;
+      font-size: 100px;
+    }
   }
 `
 const Wedding = styled.section`
+width:100%;
+
+  ${({ theme }) => theme.media.md} {
     width: 900px;
     height: 500px;
     margin-bottom: 200px;
     border: 20px solid ${({ theme }) => theme.colors.pink};
     position: relative;
-    }
-    h1 {
+  }
+
+  h1 {
+    ${({ theme }) => theme.media.md} {
       position: absolute;
       color: ${({ theme }) => theme.colors.white};
-      top:-12%;
+      top: -12%;
       left: 40%;
       z-index: 1;
       font-size: 80px;
-      }
+    }
+  }
 `
 
 const Amesa = styled.section`
+width:100%;
+
+  ${({ theme }) => theme.media.md} {
     width: 900px;
     height: 500px;
     margin-bottom: 100px;
     border: 20px solid ${({ theme }) => theme.colors.blueNormal};
     position: relative;
+  }
 
-    }
-    h1 {
-      position: absolute; 
-      left: 40%;   
+  h1 {
+    ${({ theme }) => theme.media.md} {
+      position: absolute;
+      left: 40%;
       color: ${({ theme }) => theme.colors.white};
-      top:0px;
+      top: 0px;
       z-index: 1;
       font-size: 80px;
-
-      }
+    }
+  }
 `
 
-const Description = styled.p`
-  position: absolute;
-  top: 140px;
-  left: -70px;
-  width: 60%;
+const Description = styled.div`
+  width: 100%;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.9);
-  padding: 40px;
   font-size: 18px;
-    font-family: 'Jost';
+  font-family: "Jost";
   color: ${({ theme }) => theme.colors.black};
+
+  ${({ theme }) => theme.media.md} {
+    position: absolute;
+    padding: 40px;
+  }
+
   span {
+    width: 100%;
     letter-spacing: 2px;
     font-family: "MajorMono";
-    display: block;
     padding: 10px;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.white};
     border: 2px solid ${({ theme }) => theme.colors.dirtyPink};
     background-color: ${({ theme }) => theme.colors.dirtyPink};
+    ${({ theme }) => theme.media.md} {
+      display: block;
+    }
   }
+
   &.avesso {
-    left: 40%;
-    top: 30%;
-    width: 80%;
+width: 100%;
+    ${({ theme }) => theme.media.md} {
+      left: 40%;
+      top: 30%;
+      /* width: 80%; */
+    }
   }
   &.amesa {
-    left: 20%;
-    top: 60%;
+    ${({ theme }) => theme.media.md} {
+      left: 20%;
+      top: 60%;
+    }
   }
   &.wedding {
-    left: -10%;
-    top: 10%;
-    width: 40%;
+    ${({ theme }) => theme.media.md} {
+      left: 10%;
+      top: 10%;
+      /* width: 40%; */
+    }
   }
 `
 
@@ -234,70 +308,65 @@ const ProjectsContainer = () => {
     <section>
       <ProjectsMain>
         <Portfolio>
-          <h1>Portfolio </h1>
+          <h1> Portfolio </h1>{" "}
           <Description className="portfolio">
-            <p>
-                First portfolio website, not ideal but made with 
-            </p>
-            <span> AdobeXD ~ Gatsby ~ styled-components ~ Graphql </span>
+            <p>First portfolio website, not ideal but made with </p>{" "}
+            <span> AdobeXD~Gatsby~styled - components~Graphql </span>{" "}
           </Description>
-
           <ImgWrapper className="portfolio--first">
-            <Img fluid={data.portfolio.childImageSharp.fluid} />
-          </ImgWrapper>
-        </Portfolio>
+            <Img fluid={data.portfolio.childImageSharp.fluid} />{" "}
+          </ImgWrapper>{" "}
+        </Portfolio>{" "}
         <Avesso>
-          <h1>Avesso</h1>
+          <h1> Avesso </h1>{" "}
           <ImgWrapper className="avesso--first">
-            <Img fluid={data.avesso.childImageSharp.fluid} />
-          </ImgWrapper>
+            <Img fluid={data.avesso.childImageSharp.fluid} />{" "}
+          </ImgWrapper>{" "}
           <Description className="avesso">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.Corporis
               atque aspernatur ducimus temporibus dolorem aliquid id, cumque
-              eligendi quas fugit reiciendis ipsa. Provident repellat, earum
-              placeat nam consequatur reiciendis maiores.
-            </p>
-            <a href="http://avesso.virose.pt">ckeck website </a>
-            <span> AdobeXD ~ Gatsby ~ styled-components ~ Graphql </span>
-          </Description>
-        </Avesso>
+              eligendi quas fugit reiciendis ipsa.Provident repellat, earum
+              placeat nam consequatur reiciendis maiores.{" "}
+            </p>{" "}
+            <a href="http://avesso.virose.pt"> ckeck website </a>{" "}
+            <span> AdobeXD~Gatsby~styled - components~Graphql </span>{" "}
+          </Description>{" "}
+        </Avesso>{" "}
         <Wedding>
-          <h1>Wedding website</h1>
+          <h1> Wedding website </h1>{" "}
           <ImgWrapper className="wedding--first">
-            <Img fluid={data.wedding.childImageSharp.fluid} />
-          </ImgWrapper>
+            <Img fluid={data.wedding.childImageSharp.fluid} />{" "}
+          </ImgWrapper>{" "}
           <Description className="wedding">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate aut dicta assumenda iusto at, quisquam, quibusdam
-              accusamus dignissimos vel commodi quasi sit, perferendis amet!
-              Dolorum natus dignissimos a provident deserunt.
-            </p>
-            <a href="../../wedding-website.pdf"> CV </a>
-            <span> AdobeXD ~ html ~ css ~ js </span>
-          </Description>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.Cupiditate
+              aut dicta assumenda iusto at, quisquam, quibusdam accusamus
+              dignissimos vel commodi quasi sit, perferendis amet! Dolorum natus
+              dignissimos a provident deserunt.{" "}
+            </p>{" "}
+            <a href="../../wedding-website.pdf"> CV </a>{" "}
+            <span> AdobeXD~html~css~js </span>{" "}
+          </Description>{" "}
         </Wedding>
-
         <Amesa>
-          <h1>Amesa woocommerce</h1>
+          <h1> Amesa woocommerce </h1>
           <ImgWrapper className="amesa--first">
             <Img fluid={data.amesa.childImageSharp.fluid} />
           </ImgWrapper>
           <Description className="amesa">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate aut dicta assumenda iusto at, quisquam, quibusdam
-              accusamus dignissimos vel commodi quasi sit, perferendis amet!
-              Dolorum natus dignissimos a provident deserunt.
-            </p>
-            <a href="../../wedding-website.pdf"> CV </a>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.Cupiditate
+              aut dicta assumenda iusto at, quisquam, quibusdam accusamus
+              dignissimos vel commodi quasi sit, perferendis amet! Dolorum natus
+              dignissimos a provident deserunt.{" "}
+            </p>{" "}
+            <a href="../../wedding-website.pdf"> CV </a>{" "}
             <span> AdobeXD ~ html ~ css ~ js ~ wordpress ~ woocommerce </span>
-          </Description>
+          </Description>{" "}
         </Amesa>
 
-        <div></div>
-      </ProjectsMain>
+      </ProjectsMain>{" "}
     </section>
   )
 }
