@@ -16,6 +16,7 @@ const SocialWrapper = styled.div`
     a {
     position: relative;
     }
+
     .github {
         &::before {
         content: "";
