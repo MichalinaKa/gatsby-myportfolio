@@ -12,7 +12,8 @@ const MainWrapper = styled.div`
     padding: 30px 6% 4% 6%;
     overflow: hidden;
     text-align: right;
-    position: relative;
+    position: relative; 
+    z-index: -1;
     h1 {
         font-size: 20px;
     }   
@@ -52,7 +53,7 @@ const MainWrapper = styled.div`
 `
 
 const Lemon1 = styled.div`
-  ${({ theme }) => theme.media.md} {
+  ${({ theme }) => theme.media.lg} {
     margin: -10px auto 0; 
     background-color:${({theme}) => theme.colors.yellow}; 
     width: 100px;
@@ -62,11 +63,12 @@ const Lemon1 = styled.div`
     position:fixed;
     overflow: hidden;
     text-align: right;
+
    
   }
 `
 const Lemon2 = styled.div`
-  ${({ theme }) => theme.media.md} {
+  ${({ theme }) => theme.media.lg} {
     background-color:${({theme}) => theme.colors.yellow}; 
     width: 150px;
     height: 150px;
@@ -84,7 +86,7 @@ const Lemon2 = styled.div`
 `
 
 const Lemon3 = styled.div`
-  ${({ theme }) => theme.media.md} {
+  ${({ theme }) => theme.media.lg} {
     background-color:${({theme}) => theme.colors.yellow}; 
     width: 70px;
     height: 70px;
@@ -102,7 +104,7 @@ const Lemon3 = styled.div`
 `
 
 const Lemon4 = styled.div`
-  ${({ theme }) => theme.media.md} {
+  ${({ theme }) => theme.media.lg} {
     background-color:${({theme}) => theme.colors.yellow}; 
     width: 130px;
     height: 130px;

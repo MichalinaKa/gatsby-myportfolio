@@ -13,15 +13,25 @@ const SocialWrapper = styled.div`
     display:flex;
     align-items: stretch;
     padding-top: 30px;
+   ${({ theme }) => theme.media.sm} {
+        top:60%;  
+        left: 30px;
+    }
+   ${({ theme }) => theme.media.sm} {
+        top:60%;  
+        left: 30px;
+    }
     ${({ theme }) => theme.media.md} {
-        background-color: ${({ theme }) => theme.colors.dirtyPink};
         top:60%;  
         left: 40px;
     }
     ${({ theme }) => theme.media.lg} {
-        background-color: ${({ theme }) => theme.colors.dirtyPink};
         top:60%;  
         left: 85px;;
+    }
+    ${({ theme }) => theme.media.xl} {
+        background-color: ${({ theme }) => theme.colors.dirtyPink};
+      
     }
     a {
     position: relative;
@@ -40,7 +50,6 @@ const SocialWrapper = styled.div`
         left: 0px;
         width: 32px;
         height: 32px;
-        background-color: ${({ theme }) => theme.colors.dirtyPink};
   }
     }
     .linkedin {
@@ -55,7 +64,6 @@ const SocialWrapper = styled.div`
         left: 0px;
         width: 32px;
         height: 32px;
-        background-color: ${({ theme }) => theme.colors.dirtyPink};
   }
     }
     .instagram {
@@ -70,7 +78,6 @@ const SocialWrapper = styled.div`
         left: 0px;
         width: 32px;
         height: 32px;
-        background-color: ${({ theme }) => theme.colors.dirtyPink};
   }
     }
     

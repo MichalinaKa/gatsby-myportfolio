@@ -98,6 +98,7 @@ html {
 .layout {
     height: 100%;
     width: 100%;
+
 }
 
 .image {

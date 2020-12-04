@@ -15,6 +15,7 @@ const ContactWrapper = styled.div`
   flex-wrap: wrap;
   position: relative;
   box-shadow: 1px -2px 19px 16px #e35c85;
+  z-index: -1;
 
 
   ${({ theme }) => theme.media.ssm} {
@@ -184,7 +185,8 @@ const H3 = styled.h3`
  `
 
 const Box = styled.div`
-  width: 200px;
+    ${({ theme }) => theme.media.md} {
+      width: 200px;
   height: 200px;
   margin-left: 40px;
   border-radius: 50%;
@@ -194,10 +196,14 @@ const Box = styled.div`
   top: 50%;
   animation-name: changeColors;
   animation-duration: 10s;
+  z-index: -1;
+      }
+  
 `
 
 const Box1 = styled.div`
-  width: 80px;
+    ${({ theme }) => theme.media.md} {
+ width: 80px;
   height: 80px;
   border-radius: 50%;
   position: absolute;
@@ -205,10 +211,15 @@ const Box1 = styled.div`
   top: 20%;
   animation-name: changeColors;
   animation-duration: 13s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 2;  
+  z-index: -1;
+
+    }
+ 
 `
 
 const Box2 = styled.div`
+    ${({ theme }) => theme.media.md} {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -219,10 +230,15 @@ const Box2 = styled.div`
   animation-name: changeColors;
   animation-duration: 8s;
   animation-iteration-count: 2;
+  z-index: -1;
+
+      }
+
 `
 
 
 const Box3 = styled.div`
+    ${({ theme }) => theme.media.md} {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -233,6 +249,10 @@ const Box3 = styled.div`
   animation-name: changeColors;
   animation-duration: 6s;
   animation-iteration-count: 2;
+  z-index: -1;
+
+      }
+
 
   @keyframes changeColors {
     0% {

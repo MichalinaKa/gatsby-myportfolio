@@ -3,14 +3,18 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import Eyes from "../images/eyes.png"
+import BurgerMenu from "./burgerMenu"
 
 const HeaderWrapper = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   padding-top: 50px;
-  padding: 10px 50px 100px 50px;
-
+  padding: 10px 30px 100px 50px;
+  overflow: hidden;
+ ${({ theme }) => theme.media.md} {
+     padding: 10px 50px 100px 50px;
+    }
   ${({ theme }) => theme.media.lg} {
      padding: 50px 100px 50px 100px;
     }
@@ -64,9 +68,9 @@ const LogoWrapper = styled.div`
   background-image: url(${Eyes});
   background-size: 80%;
   background-repeat: no-repeat;
-  top: 50px;
-  left:70px;
-  height: 200px;
+  top: 10px;
+  right: 10px;
+  height: 70px;
   width: 150px;
   animation-name: fadeInEyes;
   animation-iteration-count: 100;
@@ -75,17 +79,22 @@ const LogoWrapper = styled.div`
   ${({ theme }) => theme.media.md} {
     height: 200px;
     width: 250px;
-
    
   }
   ${({ theme }) => theme.media.lg} {
     height: 300px;
     width: 250px;
-    right: 30px;
-    left: auto;;
-    top: 80px;
   }
-      @keyframes fadeInEyes
+
+  ${({ theme }) => theme.media.xl} {
+    height: 300px;
+    width: 250px;
+    right: 30px;
+    top: 80px;
+    /* left: auto; */
+  }
+
+    @keyframes fadeInEyes
       {
           0% { opacity: 0;  }
           5% { opacity: 1; }  
@@ -108,22 +117,28 @@ const LogoWrapper = styled.div`
           100% { opacity: 0 }
       }
 `
+
 const StyledH1 = styled.h1`
+    /* width: 50%; */
   a {
     text-decoration: none;
     font-family: "MajorMono";
     font-style: normal;
-    font-size: 20px;
+    font-size: 16px;
     color: #fdffba;
- ${({ theme }) => theme.media.md} {
-    font-size: 30px;
 
-  }
-  ${({ theme }) => theme.media.lg} {
-     font-size: 30px;
-
-  }
-  ${({ theme }) => theme.media.xl} {
+    ${({ theme }) => theme.media.sm} {
+        font-size: 20px;
+    }
+    ${({ theme }) => theme.media.md} {
+        font-size: 25px;
+    }
+    
+    ${({ theme }) => theme.media.lg} {
+       font-size: 30px;
+    }
+    
+    ${({ theme }) => theme.media.xl} {
 
 
   }
@@ -133,6 +148,7 @@ const StyledH1 = styled.h1`
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
+    <BurgerMenu/>
     <MenuWrapper>
       <Link to="/" activeClassName="activeItem">
         {" "}
@@ -158,7 +174,7 @@ const Header = ({ siteTitle }) => (
     <LogoWrapper> 
     </LogoWrapper>
       <StyledH1>
-        <Link to="/">Michalina Kamińska</Link>
+        {/* <Link to="/">Michalina Kamińska</Link> */}
       </StyledH1>
   </HeaderWrapper>
 )
