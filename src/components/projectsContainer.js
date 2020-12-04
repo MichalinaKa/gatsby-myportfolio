@@ -39,12 +39,10 @@ const GithubLink = styled.div`
     width: 32px;
     height: 32px;
     a {
-      padding: 5px;
-      /* display: block; */
-      width: 32px;
-      height: 32px;
+        padding: 5px;
+        width: 32px;
+        height: 32px;
 }
-    height: 50px;
       :before {
         content: "";
         background-image: url(${Github});
@@ -65,9 +63,9 @@ const Eye = styled.div`
     z-index: 11;
 
     a {
-      width: 32px;
-      height: 32px;
-      z-index: 11;
+        width: 32px;
+        height: 32px;
+        z-index: 11;
 }
       :before {
         content: "";
@@ -89,20 +87,18 @@ const ImgWrapper = styled.div`
   height:300px;
 
   ${({ theme }) => theme.media.sm} {
-    height: 400px;
+      height: 400px;
   }
   ${({ theme }) => theme.media.md} {
-    height: 400px;
+      height: 400px;
   }
 
   ${({ theme }) => theme.media.lg} {
-    height: 500px;
-    width:700px;
+      height: 500px;
+      width:700px;
   }
 
   &.portfolio--first {
-     ${({ theme }) => theme.media.lg} {
-      }
     .gatsby-image-wrapper {
         box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
         margin: 50px auto 0;
@@ -347,7 +343,7 @@ const Description = styled.div`
   color: ${({ theme }) => theme.colors.black};
  
   ${({ theme }) => theme.media.lg} {
-  padding: 150px 60px 20px;
+      padding: 150px 60px 20px;
   }
 
   span {
@@ -473,12 +469,7 @@ const ProjectsContainer = () => {
         id
         childImageSharp {
           fluid(maxHeight: 500, maxWidth: 800, quality: 100) {
-            base64
-            tracedSVG
-            srcWebp
-            srcSetWebp
-            originalImg
-            originalName
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -486,11 +477,8 @@ const ProjectsContainer = () => {
         id
         childImageSharp {
          fluid(maxHeight: 500, maxWidth: 800, quality: 100) {
-            base64
-            srcWebp
-            srcSetWebp
-            originalImg
-            originalName
+            ...GatsbyImageSharpFluid
+
           }
         }
       }
@@ -498,11 +486,8 @@ const ProjectsContainer = () => {
         id
         childImageSharp {
           fluid(maxHeight: 500, maxWidth: 800, quality: 100) {
-            base64
-            srcWebp
-            srcSetWebp
-            originalImg
-            originalName
+          ...GatsbyImageSharpFluid
+
           }
         }
       }
@@ -510,11 +495,8 @@ const ProjectsContainer = () => {
         id
         childImageSharp {
            fluid(maxHeight: 500, maxWidth: 800, quality: 100) {
-            base64
-            srcWebp
-            srcSetWebp
-            originalImg
-            originalName
+            ...GatsbyImageSharpFluid
+
           }
         }
       }
@@ -529,24 +511,23 @@ const ProjectsContainer = () => {
         <Portfolio id="top">
           <h1> Portfolio </h1>{" "}
           <Description className="portfolio">
-            <p>First portfolio website, not ideal but made with Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatibus accusamus consectetur a. Dolorum quis alias distinctio recusandae accusamus sit doloribus itaque repellat quisquam laboriosam. Aperiam iusto libero molestias officiis!</p>{" "}
+            <h3>My first portfolio website</h3>
+            <h4>DURATION: 1 week (time after work)</h4>
+            <p>Portfolio website, made with Gatsby and styled-components. Like other projects, designed in AdobeXD. Realized with mobile first approach.</p>
             <IconsWrapper>
               <li>
                 <a href="https://github.com/MichalinaKa/gatsby-myportfolio"><GithubLink> </GithubLink></a>
-
               </li>
               <li>
                 <a href="https://gatsby-myportfolio.michalinaka.vercel.app/"> <Eye> </Eye></a>
               </li>
             </IconsWrapper>
 
-
-
             <span>AdobeXD ~ Gatsby ~ styled-components ~ Graphql</span>{" "}
           </Description>
 
           <ImgWrapper className="portfolio--first">
-            <Img fluid={data.portfolio.childImageSharp.fluid} />{" "}
+            <Img fluid={data.portfolio.childImageSharp.fluid} alt="Gatsby portfolio"/>
           </ImgWrapper>{" "}
 
         </Portfolio>{" "}
@@ -555,43 +536,43 @@ const ProjectsContainer = () => {
           <h1> Avesso </h1>{" "}
 
           <Description className="avesso">
+            <h3>Online exhibition</h3>
+            <h4>DURATION: 3 weeks (8 hours per day)</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.Corporis
-              atque aspernatur ducimus temporibus dolorem aliquid id, cumque
-              eligendi quas fugit reiciendis ipsa.Provident repellat, earum
-              placeat nam consequatur reiciendis maiores.{" "}
-            </p>{" "}
+           STORY: In march 2020, time of Covid-19, a friend of mine who is a Ph.D student at University of Arts in Porto asked me for some help in creating  a website for an online exhibition. Worldwide situation made impossible any kind of live meeting, but nothing could affect our motivation!</p>
+          <p>This project was developed as follows. 1 step: project expectations, 2 step: set the main points for the design, 3 step: first design, 4 step: technology was chosen, 5 step: MAKE EVERYTHING REAL :) </p>
+            <p>The main challenge in that project was the technology, considering that my only approach to Gatsby on that time  was on an online course at eduweb.pl. I had to learn while working on that website, but in just 3 weeks magic happened!</p>
             <IconsWrapper>
               <li>
                 <a href="https://github.com/MichalinaKa/Avesso_version1"><GithubLink> </GithubLink></a>
-
               </li>
               <li>
                 <a href="http://avesso.virose.pt"> <Eye> </Eye></a>
               </li>
-            </IconsWrapper>
-
+            </IconsWrapper> 
             <span>AdobeXD ~ Gatsby ~ styled-components ~ Graphql</span>{" "}
-          </Description>{" "}
-
+          </Description>
           <ImgWrapper className="avesso--first">
-            <Img fluid={data.avesso.childImageSharp.fluid} />{" "}
+            <Img fluid={data.avesso.childImageSharp.fluid} alt="avesso online exhibition"/>
           </ImgWrapper>{" "}
         </Avesso>{" "}
        
          <Wedding>
-          <h1> Wedding website </h1>{" "}
+          <h1> Wedding website </h1>
           <Description className="wedding">
+            <h4>DURATION: 2 months (from time to time)</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.Cupiditate
-              aut dicta assumenda iusto at, quisquam, quibusdam accusamus
-              dignissimos vel commodi quasi sit, perferendis amet! Dolorum natus
-              dignissimos a provident deserunt.{" "}
+             My own wedding website first made for our ceremony in 2020. 
+            </p>
+          
+            <p>I started this project on May 2019. On the beginning I felt unable to face it all by myself, also because a lot of things were problematic for me. But despite of all I did it, and it's been a so important achievement for me! And it will be always a pleasure to come back to it for make some required improvements or changes.</p>
+            <p>Unfortunately, because of current pandemy we had to postpone the event, so that's why the website now is off. A good moment indeed to plan some changes, for example to rewrite it in Gatsby.</p>
+            <p>
+            Here in attachement pdf version and code on Github.
             </p>
             <IconsWrapper>
               <li>
                 <a href="https://github.com/MichalinaKa/wedding-website"><GithubLink> </GithubLink></a>
-
               </li>
               <li>
                 <a href={PDFwedding} download> <Eye> </Eye></a>
@@ -601,39 +582,39 @@ const ProjectsContainer = () => {
             <span>AdobeXD ~ html ~ css ~ js</span>{" "}
           </Description>{" "}
           <ImgWrapper className="wedding--first">
-            <Img fluid={data.wedding.childImageSharp.fluid} />{" "}
+            <Img fluid={data.wedding.childImageSharp.fluid} alt="wedding html css"/>
           </ImgWrapper>{" "}
         </Wedding>
        
          <Amesa>
           <h1> Amesa </h1>
-
           <Description className="amesa">
+            <h3>Online shop</h3>
+            <h4>DURATION: 2 months till now (2-3 hours per day, made in cooperation with friend)</h4>{" "}
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.Cupiditate
-              aut dicta assumenda iusto at, quisquam, quibusdam accusamus
-              dignissimos vel commodi quasi sit, perferendis amet! Dolorum natus
-              dignissimos a provident deserunt.{" "}
-            </p>{" "}
-
+             Project in progress. Making from the beginning to the end. 
+            </p>
+            <p>
+              Steps: <br></br>1. Searching ideas for the new shop. <br></br>2. Fixing style (colors, patterns, main theme, important elements). <br></br>3. Design made in AdobeXD. <br></br>4. Work, work, work.... ;) 
+            </p><br></br>
+            <p>
+            </p>
             <IconsWrapper>
               <li>
                 <a href="https://github.com/MichalinaKa/amesa_sklep"><GithubLink> </GithubLink></a>
-
               </li>
-              <li>
+              {/* <li>
                 <a href="http://amesa.pl" > <Eye> </Eye></a>
-              </li>
+              </li> */}
             </IconsWrapper>
-
             <span>AdobeXD ~ html ~ css ~ js ~ wordpress ~ woocommerce</span>
           </Description>
           <ImgWrapper className="amesa--first">
-            <Img fluid={data.amesa.childImageSharp.fluid} />
+            <Img fluid={data.amesa.childImageSharp.fluid} alt="woocommerce amesa"/>
           </ImgWrapper>
         </Amesa>
 
-      </ProjectsMain>{" "}
+      </ProjectsMain>
     </section>
   )
 }

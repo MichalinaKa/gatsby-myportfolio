@@ -1,9 +1,8 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import Img from "gatsby-image"
 import ProjectsContainer from "../components/projectsContainer"
 import ScrollArrow from "../components/ScrollArrow"
 
@@ -23,9 +22,10 @@ letter-spacing: 2px;
 font-size: 20px;
 text-decoration: none;
 text-transform: uppercase;
+z-index: 11;
 `
 
-const ProjectsPage = ({ data }) =>
+const ProjectsPage = () =>
   (
     <Layout  >
       <SEO title="Page Projects" />
