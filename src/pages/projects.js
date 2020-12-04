@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import ProjectsContainer from "../components/projectsContainer"
-import ScrollArrow from "../components/ScrollArrow"
 
 
 const GoBackLink = styled(Link)`
@@ -30,7 +29,6 @@ const ProjectsPage = () =>
     <Layout  >
       <SEO title="Page Projects" />
        <ProjectsContainer />
-        <ScrollArrow/>
         <GoBackLink to="/">Go back to the homepage</GoBackLink>
     </Layout>
   )
