@@ -9,7 +9,7 @@ const ScrollInfo = styled.span`
   font-size: 0.875rem; //14px
   line-height: 1;
   letter-spacing: 0.1rem; //1.6px
-  color: ${({ theme }) => theme.colors.grey200};
+  color: ${({ theme }) => theme.colors.black};
   writing-mode: tb;
   position: fixed;
   width: 10vw;
