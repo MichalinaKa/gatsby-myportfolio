@@ -75,6 +75,7 @@ const LogoWrapper = styled.div`
   animation-name: fadeInEyes;
   animation-iteration-count: 100;
   animation-duration: 10s;
+  z-index: 10;
 
   ${({ theme }) => theme.media.md} {
     height: 200px;
@@ -90,7 +91,7 @@ const LogoWrapper = styled.div`
     height: 300px;
     width: 250px;
     right: 30px;
-    top: 80px;
+    top: 30px;
     /* left: auto; */
   }
 

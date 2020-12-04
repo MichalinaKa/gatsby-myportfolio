@@ -2,13 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import Github from "../assets/icons/github.png"
+import EyeIcon from "../assets/icons/eye.png"
+import PDFwedding from "../../static/wedding-website.pdf"
 
 const ProjectsMain = styled.div`
   position: relative;
   margin: 50px auto 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  z-index: 1;
 
   ${({ theme }) => theme.media.sm} {
   }
@@ -24,225 +27,441 @@ const ProjectsMain = styled.div`
   }
 `
 
+const IconsWrapper = styled.ul`
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
+
+`
+
+const GithubLink = styled.div`
+    position: relative;
+    width: 32px;
+    height: 32px;
+    a {
+      padding: 5px;
+      /* display: block; */
+      width: 32px;
+      height: 32px;
+}
+    height: 50px;
+      :before {
+        content: "";
+        background-image: url(${Github});
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 32px;
+        height: 32px;
+  }
+`
+
+const Eye = styled.div`
+    position: relative;
+    height: 50px;
+    z-index: 11;
+
+    a {
+      width: 32px;
+      height: 32px;
+      z-index: 11;
+}
+      :before {
+        content: "";
+        background-image: url(${EyeIcon});
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 0px;
+        width: 40px;
+        height: 40px;
+  }
+`
+
 const ImgWrapper = styled.div`
-  position: relative;
-  margin: 0 auto;
-  object-fit: contain;
+  margin: 0 auto 30px;;
   width: 100%;
-  height:250px;
+  height:300px;
 
   ${({ theme }) => theme.media.sm} {
-    height: 350px;
+    height: 400px;
   }
   ${({ theme }) => theme.media.md} {
-    height: 500px;
+    height: 400px;
   }
 
   ${({ theme }) => theme.media.lg} {
-    height: 600px;
+    height: 500px;
+    width:700px;
   }
-  &.portfolio--first {
 
+  &.portfolio--first {
+     ${({ theme }) => theme.media.lg} {
+      }
     .gatsby-image-wrapper {
-        margin: 0 auto;
-        position: absolute;
         box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
-        width: 100%;
+        margin: 50px auto 0;
+        width: 90%;
         height: 100%;
         left: 0;
         object-fit: contain;
-      ${({ theme }) => theme.media.md} {
-        left: 70%;
-        top: -100px;
-        position: absolute;
-        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+        opacity: 0.5;
+ 
+      ${({ theme }) => theme.media.lg} {
         width: 100%;
         height: 100%;
+        position: absolute;
         object-fit: contain;
+        opacity: 1;
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.71);
       }
     }
   }
+
   &.avesso--first {
     .gatsby-image-wrapper {
-      ${({ theme }) => theme.media.md} {
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+        margin: 50px auto 0;
+        width: 90%;
+        height: 100%;
+        left: 0;
+        object-fit: contain;
+        opacity: 0.5;
+
+  
+      ${({ theme }) => theme.media.lg} {
         width: 100%;
         height: 100%;
         position: absolute;
         object-fit: contain;
-        left: -30%;
-        top: -30%;
-        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+        opacity: 1;
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.71);
       }
     }
   }
 
   &.wedding--first {
     .gatsby-image-wrapper {
-      ${({ theme }) => theme.media.md} {
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+        margin: 50px auto 0;
+        width: 90%;
+        height: 100%;
+        left: 0;
+        object-fit: contain;
+        opacity: 0.5;
+
+      ${({ theme }) => theme.media.lg} {
         width: 100%;
         height: 100%;
         position: absolute;
         object-fit: contain;
-        left: 70%;
-        top: 40%;
-        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+        opacity: 1;
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.71);
       }
     }
   }
+
   &.amesa--first {
-    .gatsby-image-wrapper {
-      ${({ theme }) => theme.media.md} {
+      .gatsby-image-wrapper {
+            box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.51);
+            margin: 50px auto 0;
+            width: 90%;
+            height: 100%;
+            left: 0;
+            object-fit: contain;
+            opacity: 0.5;
+
+      ${({ theme }) => theme.media.lg} {
         width: 100%;
-        height: 80%;
+        height: 100%;
         position: absolute;
         object-fit: contain;
-        left: -30%;
-        top: -20%;
-        box-shadow: 2px 20px 40px 14px rgba(255, 255, 255, 0.51);
+        opacity: 1;
+        box-shadow: 2px 2px 40px 14px rgba(255, 255, 255, 0.71);
+      }
       }
     }
-  }
 `
 
 const Portfolio = styled.section`
-    width:100%;
+    width:95%;
     height: auto;
-
-  ${({ theme }) => theme.media.md} {
-    width: 900px;
-    height: 500px;
-    margin-bottom: 200px;
-    border: 20px solid ${({ theme }) => theme.colors.pink};
+    margin: 0 auto 100px;
     position: relative;
+    border: 5px solid ${({ theme }) => theme.colors.pink};
+
+    ${({ theme }) => theme.media.lg} {
+      width: 70%;
+      border: 10px solid ${({ theme }) => theme.colors.pink};
   }
 
   h1 {
-    ${({ theme }) => theme.media.md} {
-      position: absolute;
-      right: 30%;
       color: ${({ theme }) => theme.colors.white};
-      top: 0px;
+      font-size: 50px;
+      padding: 40px;
+    ${({ theme }) => theme.media.sm} {
+        font-size: 50px;
+    }
+    ${({ theme }) => theme.media.md} {
+        font-size: 60px;
+    }
+    ${({ theme }) => theme.media.lg} {
+      position: absolute;
+      top: -50px;
       left: -150px;
       z-index: 1;
       font-size: 80px;
+    }
+    ${({ theme }) => theme.media.xl} {
+      font-size: 90px;
+    }
+   ${({ theme }) => theme.media.xl} {
+      font-size: 100px;
     }
   }
 `
 
 const Avesso = styled.section`
-  width:100%;
-
-  ${({ theme }) => theme.media.md} {
-    width: 900px;
-    height: 500px;
-    margin-bottom: 300px;
-    border: 20px solid ${({ theme }) => theme.colors.black};
+    width:95%;
+    height: auto;
+    margin: 0 auto 100px;
     position: relative;
+    border: 5px solid ${({ theme }) => theme.colors.black};
+    
+${({ theme }) => theme.media.lg} {
+      width: 70%;
+      border: 10px solid ${({ theme }) => theme.colors.black};
   }
   h1 {
-    ${({ theme }) => theme.media.md} {
-      position: absolute;
-      right: 30%;
       color: ${({ theme }) => theme.colors.white};
-      top: -50px;
-      right: -50px;
-      z-index: 1;
-      font-size: 100px;
+      font-size: 50px;
+      padding: 40px;
+    ${({ theme }) => theme.media.sm} {
+        font-size: 50px;
     }
+    ${({ theme }) => theme.media.md} {
+        font-size: 60px;
+    }
+    ${({ theme }) => theme.media.lg} {
+      position: absolute;
+      top: -50px;
+      right: -150px;
+      font-size: 80px;
+    }
+   ${({ theme }) => theme.media.xl} {
+      font-size: 90px;
+    }
+   ${({ theme }) => theme.media.xl} {
+      font-size: 100px;
+    }}
   }
 `
+
 const Wedding = styled.section`
-width:100%;
-
-  ${({ theme }) => theme.media.md} {
-    width: 900px;
-    height: 500px;
-    margin-bottom: 200px;
-    border: 20px solid ${({ theme }) => theme.colors.pink};
+    width:95%;
+    height: auto;
+    margin: 0 auto 100px;
     position: relative;
-  }
+    border: 5px solid ${({ theme }) => theme.colors.pink};
 
+    ${({ theme }) => theme.media.lg} {
+      width: 70%;
+      border: 10px solid ${({ theme }) => theme.colors.pink};
+  }
   h1 {
-    ${({ theme }) => theme.media.md} {
-      position: absolute;
       color: ${({ theme }) => theme.colors.white};
-      top: -12%;
-      left: 40%;
+      font-size: 50px;
+      padding: 40px;
+    ${({ theme }) => theme.media.sm} {
+        font-size: 50px;
+    }
+    ${({ theme }) => theme.media.md} {
+        font-size: 60px;
+    }
+    ${({ theme }) => theme.media.lg} {
+       position: absolute;
+      top: -50px;
+      left: -150px;
       z-index: 1;
       font-size: 80px;
+    }
+   ${({ theme }) => theme.media.xl} {
+      font-size: 90px;
+    }
+   ${({ theme }) => theme.media.xl} {
+      font-size: 100px;
     }
   }
 `
 
 const Amesa = styled.section`
-width:100%;
-
-  ${({ theme }) => theme.media.md} {
-    width: 900px;
-    height: 500px;
-    margin-bottom: 100px;
-    border: 20px solid ${({ theme }) => theme.colors.blueNormal};
+    width:95%;
+    height: auto;
+    margin: 0 auto 100px;
     position: relative;
+    border: 5px solid ${({ theme }) => theme.colors.blueNormal};
+
+
+    ${({ theme }) => theme.media.lg} {
+      width: 70%;
+      border: 10px solid ${({ theme }) => theme.colors.blueNormal};
   }
 
   h1 {
-    ${({ theme }) => theme.media.md} {
-      position: absolute;
-      left: 40%;
       color: ${({ theme }) => theme.colors.white};
-      top: 0px;
+      font-size: 50px;
+      padding: 40px;
+    ${({ theme }) => theme.media.sm} {
+        font-size: 50px;
+    }
+    ${({ theme }) => theme.media.md} {
+        font-size: 60px;
+    }
+    ${({ theme }) => theme.media.lg} {
+      position: absolute;
+      top: -50px;
+      right: -150px;
       z-index: 1;
       font-size: 80px;
+    }
+   ${({ theme }) => theme.media.xl} {
+      font-size: 90px;
+    }
+   ${({ theme }) => theme.media.xl} {
+      font-size: 100px;
     }
   }
 `
 
 const Description = styled.div`
   width: 100%;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 60px 20px;
   font-size: 18px;
+  text-align: justify;
   font-family: "Jost";
   color: ${({ theme }) => theme.colors.black};
-
-  ${({ theme }) => theme.media.md} {
-    position: absolute;
-    padding: 40px;
+ 
+  ${({ theme }) => theme.media.lg} {
+  padding: 150px 60px 20px;
   }
 
   span {
-    width: 100%;
-    letter-spacing: 2px;
+    font-size: 16px;
+    width: 100%;;
+    letter-spacing: 1.5px;
     font-family: "MajorMono";
     padding: 10px;
     font-weight: 700;
+    display: flex;
     color: ${({ theme }) => theme.colors.white};
-    border: 2px solid ${({ theme }) => theme.colors.dirtyPink};
-    background-color: ${({ theme }) => theme.colors.dirtyPink};
+    background-color: ${({ theme }) => theme.colors.pink};
+
+   
     ${({ theme }) => theme.media.md} {
-      display: block;
+      letter-spacing: 2px;
+      color: ${({ theme }) => theme.colors.white};
+      background-color: ${({ theme }) => theme.colors.pink};
+      border: 2px solid ${({ theme }) => theme.colors.pink};
     }
   }
 
-  &.avesso {
-width: 100%;
+  &.portfolio {
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1;
+
+    ${({ theme }) => theme.media.sm} {
+    width: 90%;
+      }
     ${({ theme }) => theme.media.md} {
-      left: 40%;
-      top: 30%;
-      /* width: 80%; */
+      width: 70%
+    }
+    ${({ theme }) => theme.media.lg} {
+      margin: 0 auto;
+      width: 70%;
+    }
+
+
+    span {
+      background-color: ${({ theme }) => theme.colors.pink};
+      ${({ theme }) => theme.media.md} {
+        background-color: ${({ theme }) => theme.colors.pink};
+        border: 2px solid ${({ theme }) => theme.colors.pink};
+      }
+    }
+  }
+  &.avesso {
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1;
+    ${({ theme }) => theme.media.sm} {
+    width: 90%;
+      }
+    ${({ theme }) => theme.media.md} {
+      width: 70%
+    }
+
+    ${({ theme }) => theme.media.lg} {
+      margin: 0 auto;
+      width: 70%;
+    }
+span {
+      background-color: ${({ theme }) => theme.colors.black};
+      ${({ theme }) => theme.media.md} {
+        border: 2px solid ${({ theme }) => theme.colors.black};
+      }
     }
   }
   &.amesa {
-    ${({ theme }) => theme.media.md} {
-      left: 20%;
-      top: 60%;
+     margin: 0 auto;
+     width: 100%;
+     z-index: 1;
+     ${({ theme }) => theme.media.sm} {
+     width: 90%;
+      }
+     ${({ theme }) => theme.media.md} {
+      width: 70%
+     }
+
+    ${({ theme }) => theme.media.lg} {
+      margin: 0 auto;
+      width: 70%;
+    }
+
+span {
+      background-color: ${({ theme }) => theme.colors.blueNormal};
+      ${({ theme }) => theme.media.md} {
+        background-color: ${({ theme }) => theme.colors.blueNormal};
+        border: 2px solid ${({ theme }) => theme.colors.blue};
+      }
     }
   }
   &.wedding {
-    ${({ theme }) => theme.media.md} {
-      left: 10%;
-      top: 10%;
-      /* width: 40%; */
+      margin: 0 auto;
+      width: 100%;
+      z-index: 1;
+      ${({ theme }) => theme.media.sm} {
+      width: 90%;
+        }
+      ${({ theme }) => theme.media.md} {
+        width: 70%
+      }
+    ${({ theme }) => theme.media.lg} {
+      margin: 0 auto;
+      width: 70%;
+    }
+
+span {
+      background-color: ${({ theme }) => theme.colors.pink};
+      ${({ theme }) => theme.media.md} {
+        background-color: ${({ theme }) => theme.colors.pink};
+        border: 2px solid ${({ theme }) => theme.colors.pink};
+      }
     }
   }
 `
@@ -250,10 +469,10 @@ width: 100%;
 const ProjectsContainer = () => {
   const data = useStaticQuery(graphql`
     query {
-      portfolio: file(relativePath: { eq: "portfolio.png" }) {
+      portfolio: file(relativePath: { eq: "portfolio-project.png" }) {
         id
         childImageSharp {
-          fluid {
+          fluid(maxHeight: 500, maxWidth: 800, quality: 100) {
             base64
             tracedSVG
             srcWebp
@@ -263,12 +482,11 @@ const ProjectsContainer = () => {
           }
         }
       }
-      avesso: file(relativePath: { eq: "avesso.png" }) {
+      avesso: file(relativePath: { eq: "avesso-project.png" }) {
         id
         childImageSharp {
-          fluid {
+         fluid(maxHeight: 500, maxWidth: 800, quality: 100) {
             base64
-            tracedSVG
             srcWebp
             srcSetWebp
             originalImg
@@ -279,9 +497,8 @@ const ProjectsContainer = () => {
       wedding: file(relativePath: { eq: "wedding-ceremony.png" }) {
         id
         childImageSharp {
-          fluid {
+          fluid(maxHeight: 500, maxWidth: 800, quality: 100) {
             base64
-            tracedSVG
             srcWebp
             srcSetWebp
             originalImg
@@ -289,12 +506,11 @@ const ProjectsContainer = () => {
           }
         }
       }
-      amesa: file(relativePath: { eq: "amesa.png" }) {
+      amesa: file(relativePath: { eq: "amesa-project.png" }) {
         id
         childImageSharp {
-          fluid {
+           fluid(maxHeight: 500, maxWidth: 800, quality: 100) {
             base64
-            tracedSVG
             srcWebp
             srcSetWebp
             originalImg
@@ -304,24 +520,40 @@ const ProjectsContainer = () => {
       }
     }
   `)
+
+
   return (
     <section>
       <ProjectsMain>
-        <Portfolio>
+
+        <Portfolio id="top">
           <h1> Portfolio </h1>{" "}
           <Description className="portfolio">
-            <p>First portfolio website, not ideal but made with </p>{" "}
-            <span> AdobeXD~Gatsby~styled - components~Graphql </span>{" "}
+            <p>First portfolio website, not ideal but made with Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatibus accusamus consectetur a. Dolorum quis alias distinctio recusandae accusamus sit doloribus itaque repellat quisquam laboriosam. Aperiam iusto libero molestias officiis!</p>{" "}
+            <IconsWrapper>
+              <li>
+                <a href="https://github.com/MichalinaKa/gatsby-myportfolio"><GithubLink> </GithubLink></a>
+
+              </li>
+              <li>
+                <a href="https://gatsby-myportfolio.michalinaka.vercel.app/"> <Eye> </Eye></a>
+              </li>
+            </IconsWrapper>
+
+
+
+            <span>AdobeXD ~ Gatsby ~ styled-components ~ Graphql</span>{" "}
           </Description>
+
           <ImgWrapper className="portfolio--first">
             <Img fluid={data.portfolio.childImageSharp.fluid} />{" "}
           </ImgWrapper>{" "}
+
         </Portfolio>{" "}
+        
         <Avesso>
           <h1> Avesso </h1>{" "}
-          <ImgWrapper className="avesso--first">
-            <Img fluid={data.avesso.childImageSharp.fluid} />{" "}
-          </ImgWrapper>{" "}
+
           <Description className="avesso">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.Corporis
@@ -329,31 +561,53 @@ const ProjectsContainer = () => {
               eligendi quas fugit reiciendis ipsa.Provident repellat, earum
               placeat nam consequatur reiciendis maiores.{" "}
             </p>{" "}
-            <a href="http://avesso.virose.pt"> ckeck website </a>{" "}
-            <span> AdobeXD~Gatsby~styled - components~Graphql </span>{" "}
+            <IconsWrapper>
+              <li>
+                <a href="https://github.com/MichalinaKa/Avesso_version1"><GithubLink> </GithubLink></a>
+
+              </li>
+              <li>
+                <a href="http://avesso.virose.pt"> <Eye> </Eye></a>
+              </li>
+            </IconsWrapper>
+
+            <span>AdobeXD ~ Gatsby ~ styled-components ~ Graphql</span>{" "}
           </Description>{" "}
-        </Avesso>{" "}
-        <Wedding>
-          <h1> Wedding website </h1>{" "}
-          <ImgWrapper className="wedding--first">
-            <Img fluid={data.wedding.childImageSharp.fluid} />{" "}
+
+          <ImgWrapper className="avesso--first">
+            <Img fluid={data.avesso.childImageSharp.fluid} />{" "}
           </ImgWrapper>{" "}
+        </Avesso>{" "}
+       
+         <Wedding>
+          <h1> Wedding website </h1>{" "}
           <Description className="wedding">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.Cupiditate
               aut dicta assumenda iusto at, quisquam, quibusdam accusamus
               dignissimos vel commodi quasi sit, perferendis amet! Dolorum natus
               dignissimos a provident deserunt.{" "}
-            </p>{" "}
-            <a href="../../wedding-website.pdf"> CV </a>{" "}
-            <span> AdobeXD~html~css~js </span>{" "}
+            </p>
+            <IconsWrapper>
+              <li>
+                <a href="https://github.com/MichalinaKa/wedding-website"><GithubLink> </GithubLink></a>
+
+              </li>
+              <li>
+                <a href={PDFwedding} download> <Eye> </Eye></a>
+              </li>
+            </IconsWrapper>
+
+            <span>AdobeXD ~ html ~ css ~ js</span>{" "}
           </Description>{" "}
+          <ImgWrapper className="wedding--first">
+            <Img fluid={data.wedding.childImageSharp.fluid} />{" "}
+          </ImgWrapper>{" "}
         </Wedding>
-        <Amesa>
-          <h1> Amesa woocommerce </h1>
-          <ImgWrapper className="amesa--first">
-            <Img fluid={data.amesa.childImageSharp.fluid} />
-          </ImgWrapper>
+       
+         <Amesa>
+          <h1> Amesa </h1>
+
           <Description className="amesa">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.Cupiditate
@@ -361,9 +615,22 @@ const ProjectsContainer = () => {
               dignissimos vel commodi quasi sit, perferendis amet! Dolorum natus
               dignissimos a provident deserunt.{" "}
             </p>{" "}
-            <a href="../../wedding-website.pdf"> CV </a>{" "}
-            <span> AdobeXD ~ html ~ css ~ js ~ wordpress ~ woocommerce </span>
-          </Description>{" "}
+
+            <IconsWrapper>
+              <li>
+                <a href="https://github.com/MichalinaKa/amesa_sklep"><GithubLink> </GithubLink></a>
+
+              </li>
+              <li>
+                <a href="http://amesa.pl" > <Eye> </Eye></a>
+              </li>
+            </IconsWrapper>
+
+            <span>AdobeXD ~ html ~ css ~ js ~ wordpress ~ woocommerce</span>
+          </Description>
+          <ImgWrapper className="amesa--first">
+            <Img fluid={data.amesa.childImageSharp.fluid} />
+          </ImgWrapper>
         </Amesa>
 
       </ProjectsMain>{" "}

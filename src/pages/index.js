@@ -190,7 +190,7 @@ const IndexPage = () => (
     </BorderBox>
     <Wrapper>
       <About>
-        ~Hi! I’m <span>front-end developer</span> &
+        ~Hi! I’m Michalina, <span>front-end developer</span> &
         <span className="pink"><br></br> beginner web designer </span>
         <br></br>
       </About>

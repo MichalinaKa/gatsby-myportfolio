@@ -53,16 +53,18 @@ const MenuLinks = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    text-align: center;
+    text-align: left;
     height: 100%;
     width: 100%;
     background-color: rgba(255,255,255,0.9);
     transition: opacity 200ms;
-    /* width: ${({nav}) => nav ? "100%" : "0" }; */
     opacity: ${({nav}) => nav ? "1" : "0" };
+    z-index: 0;
+    z-index: ${({nav}) => nav ? "9" : "0" };
+
 
     ul {
         list-style-type: none;
@@ -72,6 +74,7 @@ const MenuLinks = styled.nav`
     }
     a {
         text-decoration: none;
+        text-transform: uppercase;
         color:  ${({ theme }) => theme.colors.pink};
         transition: color 300ms;
         font-size: 35px;
