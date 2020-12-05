@@ -3,25 +3,34 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import Eyes from "../images/eyes.png"
+import BurgerMenu from "./burgerMenu"
 
 const HeaderWrapper = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   padding-top: 50px;
-  padding: 50px 100px 50px 100px;
+  padding: 10px 30px 100px 50px;
+  overflow: hidden;
+ ${({ theme }) => theme.media.md} {
+     padding: 10px 50px 100px 50px;
+    }
+  ${({ theme }) => theme.media.lg} {
+     padding: 50px 100px 50px 100px;
+    }
+
 `
 
 const MenuWrapper = styled.div`
   flex-basis: 50%;
-  display: flex;
+  display: none;
   justify-content: space-between;
-  ${({ theme }) => theme.media.md} {
-    flex-basis: 50%;
-    }
+ 
   ${({ theme }) => theme.media.lg} {
+    display: flex;
     flex-basis: 45%;
     }
+
   a {
     letter-spacing: 1.4px;
     text-decoration: none;
@@ -29,13 +38,16 @@ const MenuWrapper = styled.div`
     font-family: "MajorMono";
     color: ${({theme}) => theme.colors.violet}; 
     font-size: 22px;
+
     &:active {
       background-color: ${({theme}) => theme.colors.yellow};
     }
+
     &:visited {
       color: ${({theme}) => theme.colors.violet}; ;
     }
   }
+
   .activeItem {
     position: relative;
     &:before {
@@ -56,14 +68,34 @@ const LogoWrapper = styled.div`
   background-image: url(${Eyes});
   background-size: 80%;
   background-repeat: no-repeat;
-  top: 80px;
-right: 30px;;
-  height: 250px;
-  width: 200px;
+  top: 10px;
+  right: 10px;
+  height: 70px;
+  width: 150px;
   animation-name: fadeInEyes;
   animation-iteration-count: 100;
   animation-duration: 10s;
-      @keyframes fadeInEyes
+  z-index: 10;
+
+  ${({ theme }) => theme.media.md} {
+    height: 200px;
+    width: 250px;
+   
+  }
+  ${({ theme }) => theme.media.lg} {
+    height: 300px;
+    width: 250px;
+  }
+
+  ${({ theme }) => theme.media.xl} {
+    height: 300px;
+    width: 250px;
+    right: 30px;
+    top: 30px;
+    /* left: auto; */
+  }
+
+    @keyframes fadeInEyes
       {
           0% { opacity: 0;  }
           5% { opacity: 1; }  
@@ -83,26 +115,41 @@ right: 30px;;
           75% { opacity: 1; }
           80% { opacity: 1; }
           90% { opacity: 1; }
-
           100% { opacity: 0 }
       }
-
 `
+
 const StyledH1 = styled.h1`
+    /* width: 50%; */
   a {
-    color: #e35c85;
-    color: black;
     text-decoration: none;
     font-family: "MajorMono";
     font-style: normal;
-    font-size: 35px;
+    font-size: 16px;
     color: #fdffba;
+
+    ${({ theme }) => theme.media.sm} {
+        font-size: 20px;
+    }
+    ${({ theme }) => theme.media.md} {
+        font-size: 25px;
+    }
+    
+    ${({ theme }) => theme.media.lg} {
+       font-size: 30px;
+    }
+    
+    ${({ theme }) => theme.media.xl} {
+
+
+  }
 
   }
 `
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
+    <BurgerMenu/>
     <MenuWrapper>
       <Link to="/" activeClassName="activeItem">
         {" "}
@@ -125,11 +172,10 @@ const Header = ({ siteTitle }) => (
       </Link>{" "}
       <br />
     </MenuWrapper>{" "}
-    <LogoWrapper>
-    
+    <LogoWrapper> 
     </LogoWrapper>
       <StyledH1>
-        <Link to="/">Michalina Kamińska</Link>
+        {/* <Link to="/">Michalina Kamińska</Link> */}
       </StyledH1>
   </HeaderWrapper>
 )
