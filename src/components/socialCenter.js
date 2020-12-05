@@ -7,12 +7,13 @@ import Instagram from "../assets/icons/instagram.png"
 const SocialWrapper = styled.div`
     width: 150px;
     height: 32px;  
-    position: relative;
+    position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
     display:flex;
     flex-wrap: nowrap;
     align-items: stretch;
+    z-index: 11;
     a {
     position: relative;
     }

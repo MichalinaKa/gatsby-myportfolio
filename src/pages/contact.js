@@ -15,7 +15,7 @@ const ContactWrapper = styled.div`
   flex-wrap: wrap;
   position: relative;
   box-shadow: 1px -2px 19px 16px #e35c85;
-  z-index: -1;
+  z-index: 11;
 
 
   ${({ theme }) => theme.media.ssm} {
@@ -133,7 +133,7 @@ const H2 = styled.h2`
       top: 10px;
       font-family: "MajorMono";
       letter-spacing: 1.6px;
-
+      z-index:11;
       ${({ theme }) => theme.media.md} {
         font-size: 40px;
         line-height: 3rem;;
@@ -296,8 +296,8 @@ const ContactPage = () => (
     <ContactWrapper >
       <H1> Let 's talk</H1>{" "}
       <H2>Currently living in Gliwice, Poland. <br></br>Open for work. </H2>
-      <H3> kaminskaa.michalina @gmail.com </H3>
-      <H2> <a href="../../kaminska.pdf" > CV </a></H2>
+      <H3> kaminskaa.michalina@gmail.com </H3>
+      <H2> <a href="../../kaminska_michalina_12.2020.pdf" download> CV </a></H2>
     </ContactWrapper>
     </Layout>
 </>
