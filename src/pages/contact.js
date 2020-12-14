@@ -15,7 +15,7 @@ const ContactWrapper = styled.div`
   flex-wrap: wrap;
   position: relative;
   box-shadow: 1px -2px 19px 16px #e35c85;
-  z-index: 11;
+  z-index: 8;
 
 
   ${({ theme }) => theme.media.ssm} {

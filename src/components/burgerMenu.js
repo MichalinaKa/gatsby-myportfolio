@@ -19,7 +19,7 @@ const MenuIcon = styled.div`
     border: none;
     translate:1px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 11;
 
     div {
         width: 3rem;

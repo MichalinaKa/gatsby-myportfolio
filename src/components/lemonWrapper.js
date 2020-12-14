@@ -13,7 +13,7 @@ const MainWrapper = styled.div`
     overflow: hidden;
     text-align: right;
     position: relative; 
-    z-index: 11;
+    z-index: 8;
     h1 {
         font-size: 20px;
     }   
