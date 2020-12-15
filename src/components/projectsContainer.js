@@ -604,7 +604,7 @@ const ProjectsContainer = () => {
                 <a href="https://github.com/MichalinaKa/amesa_sklep"><GithubLink> </GithubLink></a>
               </li> */}
               <li>
-                <a href="http://misza.test.gradiamdigital.pl" > <Eye> </Eye></a>
+                <a href="http://misza.test.gradiamdigital.com" > <Eye> </Eye></a>
               </li>
             </IconsWrapper>
             <span>AdobeXD ~ html ~ css ~ js ~ wordpress ~ woocommerce</span>
