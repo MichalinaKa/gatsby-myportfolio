@@ -600,12 +600,12 @@ const ProjectsContainer = () => {
             <p>
             </p>
             <IconsWrapper>
-              <li>
-                <a href="https://github.com/MichalinaKa/amesa_sklep"><GithubLink> </GithubLink></a>
-              </li>
               {/* <li>
-                <a href="http://amesa.pl" > <Eye> </Eye></a>
+                <a href="https://github.com/MichalinaKa/amesa_sklep"><GithubLink> </GithubLink></a>
               </li> */}
+              <li>
+                <a href="http://misza.test.gradiamdigital.pl" > <Eye> </Eye></a>
+              </li>
             </IconsWrapper>
             <span>AdobeXD ~ html ~ css ~ js ~ wordpress ~ woocommerce</span>
           </Description>
